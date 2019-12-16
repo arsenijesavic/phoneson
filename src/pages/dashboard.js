@@ -1,25 +1,26 @@
-import React, { forwardRef, useState } from "react"
-import Layout from "../components/Layout"
-import firebase from "firebase"
+import React, { forwardRef, useState } from "react";
+import Layout from "../components/Layout";
+import firebase from "firebase";
 
-const database = firebase.database()
-const LIVE = database.ref("LIVE")
+const database = firebase && firebase.database && firebase.database();
+const LIVE = database && database.ref("LIVE");
 
 const IndexPage = () => {
-  const [machine, setState] = useState({ state: "MENUET4PHONES_SCENE_1" })
+  const [machine, setState] = useState({ state: "MENUET4PHONES_SCENE_1" });
 
-  LIVE.on("value", snapshot => {
-    const value = snapshot.val()
-    if (machine.state !== value.state) {
-      setState(value)
-    }
-  })
+  // LIVE &&
+  //   LIVE.on("value", snapshot => {
+  //     const value = snapshot.val();
+  //     if (machine.state !== value.state) {
+  //       setState(value);
+  //     }
+  //   });
 
   const _changeState = state => {
-    LIVE.set({ state })
-  }
+    LIVE.set({ state });
+  };
 
-  console.log(machine)
+  console.log(machine);
   return (
     <Layout strech title="LIVE 🔴">
       <button
@@ -45,7 +46,7 @@ const IndexPage = () => {
       </button>
       <p>{JSON.stringify(machine)}</p>
     </Layout>
-  )
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;
