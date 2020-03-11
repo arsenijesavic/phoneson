@@ -143,17 +143,45 @@ const IndexPage = () => {
       {machine.state === "MENUET4PHONES_SCENE_1" && <SoundBoard data={data} />}
       {machine.state === "MENUET4PHONES_SCENE_2" && <SoundBoard data={data2} />}
       {machine.state === "MENUET4PHONES_SCENE_3" && (
-        <>
-          <h1>J. S. Bach - Menuet</h1>
+        <div style={{ width: "100vw", height: "100vh" }}>
+          <img
+            style={{
+              display: "block",
+              height: "100%",
+              objectFit: "contain",
+              margin: "0 auto"
+            }}
+            src="images/jsbach.jpg"
+            alt=""
+          />
+          <h1
+            style={{
+              backgroundColor: "black",
+              fontSize: "48px",
+              textAlign: "center",
+              padding: "1rem",
+              width: "100%",
+              position: "fixed",
+              left: "50%",
+              bottom: 0,
+              transform: "translate(-50%,0%)"
+            }}
+          >
+            J. S. Bach - Menuet
+          </h1>
           <Audio autoPlay={true} src="sounds/jsbach-menuet.mp3" />
-        </>
+        </div>
       )}
 
       {machine.state === "NOISE" && (
-        <>
-          <h1>NOISE</h1>
+        <div style={{ width: "100vw", height: "100vh" }}>
+          <img
+            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            src="images/noise.gif"
+            alt=""
+          />
           <Audio autoPlay={true} src="sounds/white-noise.wav" />
-        </>
+        </div>
       )}
     </Layout>
   );

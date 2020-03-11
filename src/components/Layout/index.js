@@ -1,13 +1,13 @@
-import React from "react"
-import PropTypes from "prop-types"
-import Helmet from "react-helmet"
-import GlobalStyles from "../../styles/global"
+import React from "react";
+import PropTypes from "prop-types";
+import Helmet from "react-helmet";
+import GlobalStyles from "../../styles/global";
 
-import styled from "styled-components"
+import styled from "styled-components";
 // import Header from "./header"
 // import Footer from "./footer"
-import SEO from "../seo"
-import Tone from "tone"
+import SEO from "../seo";
+import Tone from "tone";
 
 const Wrap = styled.div`
   position: relative;
@@ -18,8 +18,9 @@ const Wrap = styled.div`
     width: 100%;
   }
 
-  background: black;
-`
+  background-color: black;
+  color: white;
+`;
 
 const Layout = ({ children, title, header, ...props }) => {
   return (
@@ -36,15 +37,15 @@ const Layout = ({ children, title, header, ...props }) => {
       </Wrap>
       {/* {header && <Footer />} */}
     </>
-  )
-}
+  );
+};
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
+  children: PropTypes.node.isRequired
+};
 
 Layout.defaultProps = {
-  header: true,
-}
+  header: true
+};
 
-export default Layout
+export default Layout;

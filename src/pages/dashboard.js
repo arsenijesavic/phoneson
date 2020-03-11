@@ -8,13 +8,13 @@ const LIVE = database && database.ref("LIVE");
 const IndexPage = () => {
   const [machine, setState] = useState({ state: "MENUET4PHONES_SCENE_1" });
 
-  // LIVE &&
-  //   LIVE.on("value", snapshot => {
-  //     const value = snapshot.val();
-  //     if (machine.state !== value.state) {
-  //       setState(value);
-  //     }
-  //   });
+  LIVE &&
+    LIVE.on("value", snapshot => {
+      const value = snapshot.val();
+      if (machine.state !== value.state) {
+        setState(value);
+      }
+    });
 
   const _changeState = state => {
     LIVE.set({ state });
